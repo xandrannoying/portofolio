@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XANDRA | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #f093fb;
+            --dark: #020617;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at top right, #0f172a, #020617);
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        @media (max-aspect-ratio: 1/1) {
+            .hero-title { font-size: 12vw; }
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        .gradient-border {
+            position: relative;
+            border-radius: 1.5rem;
+            background: linear-gradient(var(--dark), var(--dark)) padding-box,
+                        linear-gradient(135deg, var(--primary), var(--accent)) border-box;
+            border: 1px solid transparent;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after { width: 100%; }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-slow { animation: pulse-slow 4s infinite; }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="fixed top-0 w-full z-50 px-4 py-6 md:px-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-4">
+            <div class="text-xl font-extrabold tracking-tighter">
+                DEN<span class="text-cyan-400">XANDRA</span>
+            </div>
+            <div class="flex items-center space-x-4 md:space-x-8">
+                <div id="real-time-clock" class="hidden sm:block mono text-[10px] text-cyan-400 border border-cyan-400/30 px-3 py-1 rounded-md">
+                    00:00:00
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/xandrannoying" target="_blank" class="hover:text-cyan-400 transition-all"><i class="fab fa-github"></i></a>
+                    <a href="https://tiktok.com/@xandrannoying90" target="_blank" class="hover:text-pink-400 transition-all"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:denxandra90@gmail.com" class="hover:text-yellow-400 transition-all"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-20 px-4 md:px-10">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center mb-24 min-h-[70vh]">
+                <div class="w-full lg:w-3/5 text-center lg:text-left">
+                    <div class="inline-block py-1 px-4 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold tracking-[4px] uppercase mb-6">
+                        System Ready_ v.2024
+                    </div>
+                    <h1 class="hero-title text-6xl md:text-8xl font-extrabold leading-[0.9] tracking-tighter mb-8">
+                        The Future is <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-glow">Coded.</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0">
+                        Saya Den Xandra, developer Python berusia 14 tahun. Mengubah barisan kode menjadi solusi digital yang elegan.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="https://github.com/xandrannoying" target="_blank" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-cyan-400 transition-all text-center">
+                            Lihat Repository
+                        </a>
+                        <a href="mailto:denxandra90@gmail.com" class="px-8 py-4 glass border border-white/10 font-bold rounded-xl hover:border-cyan-400 transition-all text-center">
+                            Hubungi Saya
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5">
+                    <div class="gradient-border p-8 glass group transition-all duration-500">
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="relative">
+                                <img src="https://ui-avatars.com/api/?name=Den+Xandra&background=020617&color=00f2fe&size=150" alt="Avatar" class="w-20 h-20 rounded-2xl border-2 border-cyan-400/50">
+                                <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse"></div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest">Active_Status</div>
+                                <div id="live-date" class="mono text-[10px] text-cyan-400">...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="space-y-1">
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest">Full_Name</div>
+                                <div class="text-xl font-bold tracking-tight">Den Xandra</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest">Age</div>
+                                    <div class="text-lg font-bold">14 y.o</div>
+                                </div>
+                                <div class="space-y-1 text-right">
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest">Role</div>
+                                    <div class="text-lg font-bold text-cyan-400">Python Dev</div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-white/5 space-y-4">
+                                <div class="flex items-center justify-between group/link">
+                                    <span class="text-xs text-gray-400">TikTok</span>
+                                    <a href="https://tiktok.com/@xandrannoying90" target="_blank" class="text-xs font-bold hover:text-cyan-400 transition-colors">@xandrannoying90</a>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400">Email</span>
+                                    <a href="mailto:denxandra90@gmail.com" class="text-[10px] font-bold hover:text-cyan-400 transition-colors">denxandra90@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+                <div class="glass p-8 rounded-3xl hover:border-cyan-400/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 mb-6 text-xl">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Programming</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Spesialisasi dalam otomasi, data scraping, dan backend logic menggunakan Python.
+                    </p>
+                    <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                        <div class="bg-cyan-400 h-full w-[85%]"></div>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:border-purple-400/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-purple-400/10 flex items-center justify-center text-purple-400 mb-6 text-xl">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Aktivitas</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-4">
+                        Mengembangkan tool open-source di GitHub dan berbagi tips coding di TikTok.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="text-[10px] py-1 px-3 bg-white/5 rounded-full">Coding</span>
+                        <span class="text-[10px] py-1 px-3 bg-white/5 rounded-full">Gaming</span>
+                        <span class="text-[10px] py-1 px-3 bg-white/5 rounded-full">Research</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:border-orange-400/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-orange-400/10 flex items-center justify-center text-orange-400 mb-6 text-xl">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Lifestyle</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Bahan bakar sistem: <span class="text-white font-bold">Ayam</span>. <br>
+                        Penstabil mood saat debugging: <span class="text-white font-bold">Segelas Kopi</span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl overflow-hidden mb-24 border-white/5 shadow-2xl">
+                <div class="bg-white/5 p-4 flex justify-between items-center border-b border-white/10">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    </div>
+                    <span class="mono text-[10px] text-gray-500">xandra@system ~ core_script.py</span>
+                </div>
+                <div class="p-8 mono text-sm md:text-base leading-relaxed text-blue-200 overflow-x-auto whitespace-nowrap lg:whitespace-normal">
+                    <p><span class="text-pink-400">def</span> <span class="text-green-400">check_motivation</span>():</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;age = <span class="text-orange-400">14</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;hobby = <span class="text-yellow-200">"Coding"</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">if</span> age == <span class="text-orange-400">14</span> <span class="text-pink-400">and</span> hobby == <span class="text-yellow-200">"Coding"</span>:</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">return</span> <span class="text-yellow-200">"Built the future with Python."</span></p>
+                    <br>
+                    <p class="text-cyan-400 opacity-60"># System Output: Built the future with Python.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center pt-10 border-t border-white/5 max-w-6xl mx-auto">
+            <div class="text-[10px] font-bold tracking-[8px] text-gray-600 uppercase mb-8">End of Transmission</div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-[10px] tracking-widest gap-4">
+                <span>DEN XANDRA &copy; 2026</span>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/xandrannoying" class="hover:text-cyan-400 transition-colors">GITHUB</a>
+                    <a href="https://tiktok.com/@xandrannoying90" class="hover:text-cyan-400 transition-colors">TIKTOK</a>
+                    <a href="mailto:denxandra90@gmail.com" class="hover:text-cyan-400 transition-colors">GMAIL</a>
+                </div>
+                <span>DESIGNED_IN_INDONESIA</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        function updateSystemTime() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('real-time-clock').innerText = `${h}:${m}:${s}`;
+            
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            document.getElementById('live-date').innerText = now.toLocaleDateString('id-ID', options).toUpperCase();
+        }
+        setInterval(updateSystemTime, 1000);
+        updateSystemTime();
+
+        const canvas = document.getElementById('bg-canvas');
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 2;
+
+        const starGeometry = new THREE.BufferGeometry();
+        const starCount = 1500;
+        const positions = new Float32Array(starCount * 3);
+        
+        for(let i = 0; i < starCount * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 6;
+        }
+        starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        
+        const starMaterial = new THREE.PointsMaterial({
+            size: 0.005,
+            color: 0x00f2fe,
+            transparent: true,
+            opacity: 0.5,
+            blending: THREE.AdditiveBlending
+        });
+
+        const stars = new THREE.Points(starGeometry, starMaterial);
+        scene.add(stars);
+
+        function resize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            stars.rotation.y += 0.0003;
+            stars.rotation.x += 0.0001;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
